@@ -6,8 +6,9 @@ class BusinessList extends Component {
     render() {
         return (
             <div className="BusinessList">
+                Yelp.search()
                 {this.props.businesses.map((business) => {
-                    return <Business business={business} />
+                    return <Business key={business.id} business={business} />
                 })
                 }
             </div>
