@@ -4,22 +4,25 @@ import './Business.css';
 class Business extends Component {
 
     render() {
+
+        const { ImageSrc, name, address, city, state, zipCode, category, rating, reviewCount } = this.props.business;
+        // console.log(ImageSrc)
         return (
             <div className="Business">
                 <div className="image-container">
-                    <img src={this.props.business.ImageSrc} alt={this.props.business.name} />
+                    <img src={this.props.src} alt={name} />
                 </div>
-                <h2>{this.props.business.name}</h2>
+                <h2>{name}</h2>
                 <div className="Business-information">
                     <div className="Business-address">
-                        <p>{this.props.business.address}</p>
-                        <p>{this.props.business.city}</p>
-                        <p>{this.props.business.state} {this.props.business.zipCode}</p>
+                        <p>{address}</p>
+                        <p>{city}</p>
+                        <p>{state} {zipCode}</p>
                     </div>
                     <div className="Business-reviews">
-                        <h3>{this.props.business.category}</h3>
-                        <h3 className="rating">{this.props.business.rating} stars</h3>
-                        <p>{this.props.business.reviewCount} reviews</p>
+                        <h3>{category}</h3>
+                        <h3 className="rating">{rating} stars</h3>
+                        <p>{reviewCount} reviews</p>
                     </div>
                 </div>
             </div>

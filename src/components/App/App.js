@@ -18,10 +18,14 @@ class App extends Component {
   }
 
   searchYelp(term, location, sortBy) {
-    console.log(`Searching Yelp with the following params: ${term}, ${location}, and ${sortBy}`)
+    Yelp.search(term, location, sortBy)
+      .then(businesses => this.setState({ businesses: businesses }))
   }
 
+
+
   render() {
+    const { businesses } = this.state;
     return (
       <div className="App">
         <h1>ravenous</h1>

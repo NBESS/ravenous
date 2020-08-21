@@ -4,11 +4,11 @@ import Business from '../Business/Business';
 
 class BusinessList extends Component {
     render() {
+        const { businesses } = this.props;
         return (
             <div className="BusinessList">
-                Yelp.search()
-                {this.props.businesses.map((business) => {
-                    return <Business key={business.id} business={business} />
+                {businesses.map((business) => {
+                    return <Business key={business.id} business={business} src={business.imageSrc} />
                 })
                 }
             </div>
